@@ -10,3 +10,12 @@
 
 # How to run this project
 
+## Install dependencies
+```
+pip install -r requirements.txt
+```
+
+# Run unittests
+```
+python test_calc.py
+```
