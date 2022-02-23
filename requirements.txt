@@ -1,2 +1,4 @@
 fastapi
 uvicorn
+pytest-bdd
+pytest-cov

@@ -17,5 +17,5 @@ pip install -r requirements.txt
 
 # Run unittests
 ```
-python test_calc.py
+pytest --cov=calc tests/unittests/
 ```

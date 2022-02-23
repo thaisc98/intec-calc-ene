@@ -1,6 +1,6 @@
 Feature: Sumar dos numeros
 
-    Scenario Outline: Suma
+    Scenario: Suma
         Given que quiero realizar operaciones aritméticas
         When desee <operacion> <num1> y <num2>
         Then el resultado debe ser <result>
