@@ -24,8 +24,22 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(2, self.calc.divide(4, 2))
         self.assertEqual("Invalid", self.calc.sumar(1, -1))
 
+    # Tests for the square function
+    def test_square_should_return_4(self): 
+        self.assertEqual(4, self.calc.square(2))
 
-
+    def test_square_should_return_16(self): 
+        self.assertEqual(16, self.calc.square(4))
+        
+    def test_square_should_return_25(self): 
+        self.assertEqual(25, self.calc.square(5))
+        
+    def test_square_should_return_100(self): 
+        self.assertEqual(25, self.calc.square(5))
+        
+    def test_square_should_return_Invalid(self): 
+        self.assertEqual("Invalid", self.calc.square("Invalid"))
+    # Finishing tests for the square function 
 
 
 if __name__ == '__main__':
