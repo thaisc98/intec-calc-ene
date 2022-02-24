@@ -38,7 +38,7 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(25, self.calc.square(5))
         
     def test_square_should_return_Invalid(self): 
-        self.assertEqual(-3, self.calc.square("Invalid"))
+        self.assertEqual("Invalid", self.calc.square(-3))
     # Finishing tests for the square function 
 
 
