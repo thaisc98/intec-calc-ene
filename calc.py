@@ -19,8 +19,6 @@ class Calc:
             return "Invalid"
         return num1 / num2
 
-
-
     def square(self, num): 
         if num <= 0:
             return "Invalid"
