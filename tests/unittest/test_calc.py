@@ -22,7 +22,9 @@ def step_impl(calc,operacion, num1, num2):
         return calc.restar(num1, num2)
     elif operacion == "square":
         return calc.square(num1)
-
+    elif operacion == "multiplicar":
+        return calc.multiplicar(num1, num2)
+        
 @then(parsers.cfparse("el resultado debe ser {result}"))
 def step_impl(calc_result,result):
     assert result == str(calc_result)
