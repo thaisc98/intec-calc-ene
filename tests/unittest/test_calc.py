@@ -21,9 +21,21 @@ def step_impl(calc,operacion, num1, num2):
         return calc.sumar(num1, num2)
     elif operacion == "restar":
         return calc.restar(num1, num2)
-    elif operacion == "square":
-        return calc.square(num1)
 
 @then(parsers.cfparse("el resultado debe ser {result}"))
 def step_impl(calc_result,result):
     assert result == str(calc_result)
+
+@when(
+      parsers.cfparse("desee {operation:String} {num1:Number}",
+    extra_types=dict(Number=int, String=str)),
+    target_fixture="calc_result"
+)
+def step_impl(calc, operation, num1): 
+    if operation == "square":
+        return calc.square(num1)
+
+@then(parsers.cfparse("the result will be {result}"))
+def step_impl(calc_result, result):
+    assert result == str(calc_result)
+

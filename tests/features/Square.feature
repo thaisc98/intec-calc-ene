@@ -1,8 +1,8 @@
 Feature: Square of a number
 
     Scenario Outline: Square
-        Given that I want to make math operation
-        When <operation> <num1> <>
+        Given que quiero realizar operaciones aritméticas
+        When desee <operation> <num1>
         Then the result will be <result>
         
         Examples: Square of a number
