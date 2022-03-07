@@ -39,5 +39,5 @@ jobs:
           
       - name: Run unittests
         run: |
-          python test_calc.py
+          pytest  tests/unittest/
       
