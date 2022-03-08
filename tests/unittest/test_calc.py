@@ -34,7 +34,7 @@ def step_impl(calc, operacion, num1, num2):
         return calc.divide(num1, num2)
     elif operacion == "power":
         return calc.power(num1, num2)
-    elif operacion == "Residuo":
+    elif operacion == "residuo":
         return calc.residuo(num1, num2)
 
 
