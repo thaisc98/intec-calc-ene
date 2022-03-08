@@ -6,7 +6,7 @@ Feature: Square of a number
         Then el resultado debe ser <result>
         
         Examples: Potencia de nums
-        | operacion | num1   | num2   |  result |
+        | operacion  | num1  | num2   |  result |
         | square     |  2    |   0    |    1    |
         | square     |  3    |   1    |    3    |
         | square     |  4    |   2    |    16   | 
