@@ -22,12 +22,10 @@ def step_impl(calc,operacion, num1, num2):
         return calc.sumar(num1, num2)
     elif operacion == "restar":
         return calc.restar(num1, num2)
-    elif operacion == "square":
-        return calc.square(num1)
     elif operacion == "dividir":
         return calc.divide(num1, num2)
-    elif operacion == "square":
-        return calc.square(num1, num2)
+    elif operacion == "power":
+        return calc.power(num1, num2)
 
 @then(parsers.cfparse("el resultado debe ser {result}"))
 def step_impl(calc_result,result):
