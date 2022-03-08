@@ -5,6 +5,7 @@ import parse
 
 scenarios('Sumar.feature')
 scenarios('Restar.feature')
+scenarios('Multiplicar.feature')
 scenarios('Dividir.feature')
 scenarios('Power.feature')
 
@@ -22,6 +23,10 @@ def step_impl(calc,operacion, num1, num2):
         return calc.sumar(num1, num2)
     elif operacion == "restar":
         return calc.restar(num1, num2)
+    elif operacion == "square":
+        return calc.square(num1)
+    elif operacion == "multiplicar":
+        return calc.multiplicar(num1, num2)
     elif operacion == "dividir":
         return calc.divide(num1, num2)
     elif operacion == "power":
