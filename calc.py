@@ -25,6 +25,6 @@ class Calc:
         return num1 ** num2
 
     def residuo(self, num1, num2):
-        if num1 <= 0:
+        if num2 <= 0:
             return "Invalid"
         return num1 % num2
