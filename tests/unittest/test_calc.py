@@ -6,7 +6,7 @@ import parse
 scenarios('Sumar.feature')
 scenarios('Restar.feature')
 scenarios('Dividir.feature')
-scenarios('Square.feature')
+scenarios('Power.feature')
 
 @given("que quiero realizar operaciones aritméticas", target_fixture="calc")
 def step_impl():
