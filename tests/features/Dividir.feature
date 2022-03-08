@@ -7,6 +7,6 @@ Feature: Dividir dos numeros
         
         Examples: resta de Numeros
         | operacion  | num1 | num2 | result  |
-        | dividir    | 2    | 2    | 1       |
-        | dividir    | 4    | 2    | 2       |
+        | dividir    | 2    | 2    | 1.0     |
+        | dividir    | 4    | 2    | 2.0     |
         | dividir    | 1    | -1   | Invalid |
