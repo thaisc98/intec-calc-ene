@@ -9,6 +9,10 @@ calc = Calc()
 async def root():
     return {"status": "Up and running."}
 
+@app.get("/whereami")
+async def root():
+    return {"message": "Heroku"}
+
 
 @app.get("/sumar")
 def read_sumar(num1: int = 0, num2: int = 0):
