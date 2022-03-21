@@ -40,15 +40,3 @@ jobs:
       - name: Run unittests
         run: |
           pytest  tests/unittest/
-      
-      - name: Deploy Dev
-        # You may pin to the exact commit or the version.
-        # uses: mtsmachado8/heroku-deploy@5bf18e5f6160beaccc01c678d0aaa81963434e74
-        uses: mtsmachado8/heroku-deploy@v2.0.3
-        with:
-          # Email Linked to your Heroku Account
-          email: ${{ secrets.HEROKU_EMAIL }}
-          # Your Heroku API Key
-          api_key: ${{ secrets.HEROKU_API_KEY }}
-          # Your Heroku App Name
-          app_name: ${{ secrets.HEROKU_DEV_APP_NAME }}
