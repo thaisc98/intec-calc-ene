@@ -38,7 +38,24 @@ jobs:
           api_key: ${{ secrets.HEROKU_API_KEY }}
           # Your Heroku App Name
           app_name: ${{ secrets.APP_NAME }}
-          
+  
+  TestDev:
+    runs-on: ubuntu-latest
+    environment: DEV
+    needs: DeployDev
+    
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      
+      - name: TestDev
+        uses: anthonyvscode/newman-action@v1.1
+        with:
+          # Postman API key
+          apiKey: ${{ secrets.POSTMAN_API_KEY }}
+          collection: tests/postman/test-api.postman_collection.json
+          environment: tests/postman/environments/dev.json
+          iterationData: tests/postman/data/testData.csv   
           
   DeployStage:
     # The type of runner that the job will run on
@@ -46,7 +63,7 @@ jobs:
     
     environment: STAGE
     
-    needs: DeployDev
+    needs: TestDev
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -65,13 +82,32 @@ jobs:
           # Your Heroku App Name
           app_name: ${{ secrets.APP_NAME }}
           
+  TestStage:
+    runs-on: ubuntu-latest
+    environment: STAGE
+    needs: DeployStage
+    
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      
+      - name: TestStage
+        uses: anthonyvscode/newman-action@v1.1
+        with:
+          # Postman API key
+          apiKey: ${{ secrets.POSTMAN_API_KEY }}
+          collection: tests/postman/test-api.postman_collection.json
+          environment: tests/postman/environments/dev.json
+          iterationData: tests/postman/data/testData.csv   
+                    
+          
   DeployPROD:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     
     environment: PROD
     
-    needs: DeployStage
+    needs: TestStage
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -89,3 +125,21 @@ jobs:
           api_key: ${{ secrets.HEROKU_API_KEY }}
           # Your Heroku App Name
           app_name: ${{ secrets.APP_NAME }}
+
+  SmokeTests:
+    runs-on: ubuntu-latest
+    environment: PROD
+    needs: DeployPROD
+    
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      
+      - name: SmokeTests
+        uses: anthonyvscode/newman-action@v1.1
+        with:
+          # Postman API key
+          apiKey: ${{ secrets.POSTMAN_API_KEY }}
+          collection: tests/postman/test-api.postman_collection.json
+          environment: tests/postman/environments/dev.json
+          iterationData: tests/postman/data/testData.csv   
