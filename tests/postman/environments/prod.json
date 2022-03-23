@@ -1,0 +1,14 @@
+{
+	"id": "022252c1-aa57-4dc2-8cb9-22a03acb8ff4",
+	"name": "dev",
+	"values": [
+		{
+			"key": "baseUrl",
+			"value": "https://calc-intec-stage-ene.herokuapp.com",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2022-03-23T22:53:55.654Z",
+	"_postman_exported_using": "Postman/8.12.5"
+}
