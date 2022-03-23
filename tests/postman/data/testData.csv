@@ -1,5 +1,5 @@
 operation,num1,num2,result
-sumar,2,2,5
+sumar,2,2,4
 sumar,1,12,13
 sumar,100,1000,1100 
 sumar,0,0,0
