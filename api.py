@@ -13,9 +13,9 @@ async def root():
 async def root():
     return {"message": "Heroku"}
 
-@app.get("/thais")
+@app.get("/thais-test")
 async def root():
-    return {"message": "Heroku"}
+    return {"message": "Hello my name is Thais on Heroku. :D"}
 
 
 @app.get("/sumar")
