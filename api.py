@@ -13,7 +13,7 @@ async def root():
 async def root():
     return {"message": "Heroku"}
 
-@app.get("/thais")
+@app.get("/thais-test")
 async def root():
     return {"message": "Heroku"}
 
